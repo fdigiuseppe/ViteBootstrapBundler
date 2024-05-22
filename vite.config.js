@@ -6,7 +6,15 @@ export default {
     __VALUE__: `"${process.env.VALUE}"`
   },
   build: {
-    outDir: '../dist'
+    outDir: '../dist',
+    rollupOptions: {
+      output: {
+          assetFileNames: "assets/[name].[ext]",
+          chunkFileNames: "assets/[name].[ext]",
+          entryFileNames: "assets/[name].js",
+          },
+      },
+      write: true,
   },
   server: {
     port: 9999
